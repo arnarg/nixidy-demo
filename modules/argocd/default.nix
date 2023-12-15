@@ -10,8 +10,8 @@
   chart = lib.helm.downloadHelmChart {
     repo = "https://argoproj.github.io/argo-helm/";
     chart = "argo-cd";
-    version = "5.51.4";
-    chartHash = "sha256-LOEJ5mYaHEA0RztDkgM9DGTA0P5eNd0SzSlwJIgpbWY=";
+    version = "5.51.6";
+    chartHash = "sha256-3kRkzOQdYa5JkrBV/+iJK3FP+LDFY1J8L20aPhcEMkY=";
   };
 
   # It can be useful set some default values from options
