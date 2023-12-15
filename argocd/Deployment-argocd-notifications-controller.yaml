@@ -10,7 +10,7 @@ metadata:
     app.kubernetes.io/version: v2.9.3
     helm.sh/chart: argo-cd-5.51.6
   name: argocd-notifications-controller
-  namespace: default
+  namespace: argocd
 spec:
   replicas: 1
   revisionHistoryLimit: 3
@@ -46,7 +46,7 @@ spec:
             - --metrics-port=9001
             - --loglevel=info
             - --logformat=text
-            - --namespace=default
+            - --namespace=argocd
             - --argocd-repo-server=argocd-repo-server:8081
           env:
             - name: ARGOCD_NOTIFICATIONS_CONTROLLER_LOGLEVEL

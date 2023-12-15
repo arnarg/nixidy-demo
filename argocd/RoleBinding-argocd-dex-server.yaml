@@ -10,7 +10,7 @@ metadata:
     app.kubernetes.io/version: v2.9.3
     helm.sh/chart: argo-cd-5.51.6
   name: argocd-dex-server
-  namespace: default
+  namespace: argocd
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -18,4 +18,4 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: argocd-dex-server
-    namespace: default
+    namespace: argocd
