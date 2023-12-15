@@ -10,7 +10,7 @@ metadata:
     app.kubernetes.io/version: v2.9.3
     helm.sh/chart: argo-cd-5.51.6
   name: argocd-server
-  namespace: default
+  namespace: argocd
 spec:
   ingressClassName: traefik
   rules:
