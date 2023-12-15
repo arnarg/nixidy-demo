@@ -7,8 +7,8 @@ metadata:
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: argocd-application-controller
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: v2.9.2
-    helm.sh/chart: argo-cd-5.51.4
+    app.kubernetes.io/version: v2.9.3
+    helm.sh/chart: argo-cd-5.51.6
   name: argocd-application-controller
   namespace: default
 spec:
@@ -22,16 +22,16 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/cm: e1983e40eb3dcfb8145f7cfc149c58b156ccbb79dddf890946fcf5e7f54ba14a
-        checksum/cmd-params: 98121b3bf363408ec13536b5bc8d8b2f643f1bf37041470a405a908307a70736
+        checksum/cm: cc4c58a2b00faa1d0726c2fd574c8d309798a1e28bf747cbdacd39b353766a32
+        checksum/cmd-params: d7cf22fbdd035f2a9aa62f1ec2d2f7164116bf284ac3d56c0978f1c308e66c0d
       labels:
         app.kubernetes.io/component: application-controller
         app.kubernetes.io/instance: argocd
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/name: argocd-application-controller
         app.kubernetes.io/part-of: argocd
-        app.kubernetes.io/version: v2.9.2
-        helm.sh/chart: argo-cd-5.51.4
+        app.kubernetes.io/version: v2.9.3
+        helm.sh/chart: argo-cd-5.51.6
     spec:
       affinity:
         podAntiAffinity:
@@ -193,7 +193,7 @@ spec:
                   key: controller.kubectl.parallelism.limit
                   name: argocd-cmd-params-cm
                   optional: true
-          image: quay.io/argoproj/argocd:v2.9.2
+          image: quay.io/argoproj/argocd:v2.9.3
           imagePullPolicy: IfNotPresent
           name: application-controller
           ports:
