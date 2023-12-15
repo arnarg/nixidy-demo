@@ -18,4 +18,4 @@ subjects:
   - apiGroup: ""
     kind: ServiceAccount
     name: kubernetes-dashboard-cert-manager-webhook
-    namespace: default
+    namespace: kubernetes-dashboard

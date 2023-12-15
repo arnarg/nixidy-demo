@@ -32,7 +32,7 @@ spec:
       containers:
         - args:
             - --enable-insecure-login
-            - --namespace=default
+            - --namespace=kubernetes-dashboard
           image: docker.io/kubernetesui/dashboard-api:v1.0.0
           imagePullPolicy: IfNotPresent
           name: kubernetes-dashboard-api

@@ -14,7 +14,7 @@ metadata:
     app.kubernetes.io/version: v1.11.2
     helm.sh/chart: cert-manager-v1.11.2
   name: kubernetes-dashboard-cert-manager-startupapicheck:create-cert
-  namespace: default
+  namespace: kubernetes-dashboard
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -22,4 +22,4 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: kubernetes-dashboard-cert-manager-startupapicheck
-    namespace: default
+    namespace: kubernetes-dashboard

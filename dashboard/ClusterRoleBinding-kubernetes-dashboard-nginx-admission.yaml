@@ -20,4 +20,4 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: kubernetes-dashboard-nginx-admission
-    namespace: default
+    namespace: kubernetes-dashboard

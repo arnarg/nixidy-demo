@@ -14,7 +14,7 @@ spec:
   insecureSkipTLSVerify: true
   service:
     name: kubernetes-dashboard-metrics-server
-    namespace: default
+    namespace: kubernetes-dashboard
     port: 443
   version: v1beta1
   versionPriority: 100

@@ -25,4 +25,4 @@ metadata:
     app.kubernetes.io/version: v2.9.3
     helm.sh/chart: argo-cd-5.51.6
   name: argocd-ssh-known-hosts-cm
-  namespace: default
+  namespace: argocd

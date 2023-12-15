@@ -18,4 +18,4 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: kubernetes-dashboard-cert-manager-cainjector
-    namespace: default
+    namespace: kubernetes-dashboard

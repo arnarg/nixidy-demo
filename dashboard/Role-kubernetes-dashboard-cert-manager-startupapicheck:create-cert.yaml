@@ -14,7 +14,7 @@ metadata:
     app.kubernetes.io/version: v1.11.2
     helm.sh/chart: cert-manager-v1.11.2
   name: kubernetes-dashboard-cert-manager-startupapicheck:create-cert
-  namespace: default
+  namespace: kubernetes-dashboard
 rules:
   - apiGroups:
       - cert-manager.io

@@ -15,4 +15,4 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: kubernetes-dashboard-metrics-server
-    namespace: default
+    namespace: kubernetes-dashboard

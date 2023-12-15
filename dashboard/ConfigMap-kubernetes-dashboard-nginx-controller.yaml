@@ -12,4 +12,4 @@ metadata:
     app.kubernetes.io/version: 1.8.1
     helm.sh/chart: nginx-4.7.1
   name: kubernetes-dashboard-nginx-controller
-  namespace: default
+  namespace: kubernetes-dashboard

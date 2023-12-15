@@ -8,7 +8,7 @@ metadata:
     app.kubernetes.io/version: 0.6.2
     helm.sh/chart: metrics-server-3.8.4
   name: kubernetes-dashboard-metrics-server-auth-reader
-  namespace: default
+  namespace: kubernetes-dashboard
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -16,4 +16,4 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: kubernetes-dashboard-metrics-server
-    namespace: default
+    namespace: kubernetes-dashboard

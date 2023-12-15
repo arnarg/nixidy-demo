@@ -3,18 +3,18 @@ kind: Deployment
 metadata:
   annotations: null
   labels:
-    app.kubernetes.io/instance: traefik-default
+    app.kubernetes.io/instance: traefik-traefik
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: traefik
     helm.sh/chart: traefik-25.0.0
   name: traefik
-  namespace: default
+  namespace: traefik
 spec:
   minReadySeconds: 0
   replicas: 1
   selector:
     matchLabels:
-      app.kubernetes.io/instance: traefik-default
+      app.kubernetes.io/instance: traefik-traefik
       app.kubernetes.io/name: traefik
   strategy:
     rollingUpdate:
@@ -28,7 +28,7 @@ spec:
         prometheus.io/port: "9100"
         prometheus.io/scrape: "true"
       labels:
-        app.kubernetes.io/instance: traefik-default
+        app.kubernetes.io/instance: traefik-traefik
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/name: traefik
         helm.sh/chart: traefik-25.0.0

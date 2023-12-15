@@ -17,7 +17,7 @@ webhooks:
     clientConfig:
       service:
         name: kubernetes-dashboard-nginx-controller-admission
-        namespace: default
+        namespace: kubernetes-dashboard
         path: /networking/v1/ingresses
     failurePolicy: Fail
     matchPolicy: Equivalent

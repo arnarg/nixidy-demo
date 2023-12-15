@@ -16,4 +16,4 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: kubernetes-dashboard-nginx
-    namespace: default
+    namespace: kubernetes-dashboard

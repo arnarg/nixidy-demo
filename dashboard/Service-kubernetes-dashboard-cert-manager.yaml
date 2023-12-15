@@ -10,7 +10,7 @@ metadata:
     app.kubernetes.io/version: v1.11.2
     helm.sh/chart: cert-manager-v1.11.2
   name: kubernetes-dashboard-cert-manager
-  namespace: default
+  namespace: kubernetes-dashboard
 spec:
   ports:
     - name: tcp-prometheus-servicemonitor
