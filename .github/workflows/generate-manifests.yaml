@@ -1,0 +1,47 @@
+name: Generate Kubernetes manifests
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        env: ["dev", "test", "prod"]
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        path: main
+
+    - uses: cachix/install-nix-action@v20
+      with:
+        extra_nix_config: |
+          extra-experimental-features = nix-command flakes
+
+    - uses: DeterminateSystems/magic-nix-cache-action@v2
+
+    - run: |
+        TARGET_BRANCH=$(nix eval ./main#nixidyEnvs.x86_64-linux.${{ matrix.env }}.targetBranch --raw)
+
+        if git -C main fetch origin "$TARGET_BRANCH"; then
+          git -C main worktree add --checkout ../${{ matrix.env }} "$TARGET_BRANCH"
+         else
+          git -C main worktree add --orphan -b "$TARGET_BRANCH" ../${{ matrix.env }}
+        fi
+
+        RESULT=$(nix build ./main#nixidyEnvs.x86_64-linux.${{ matrix.env }}.result --print-out-paths --no-link)
+
+        rsync --recursive --delete --exclude=.git -L "$RESULT/" ${{ matrix.env }}
+
+        echo "BRANCH=$TARGET_BRANCH" >> "$GITHUB_ENV"
+
+    - uses: EndBug/add-and-commit@v9
+      with:
+        cwd: ./${{ matrix.env }}
+        default_author: github_actions
+        message: "chore(${{matrix.env}}): promote to ${{matrix.env}} ${{github.sha}}"
+        fetch: false
+        push: --set-upstream origin ${{env.BRANCH}}
