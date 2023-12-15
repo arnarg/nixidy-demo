@@ -1,0 +1,39 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  labels:
+    app.kubernetes.io/instance: kubernetes-dashboard
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: kubernetes-dashboard
+    helm.sh/chart: kubernetes-dashboard-7.0.0-alpha1
+  name: kubernetes-dashboard
+rules:
+  - apiGroups:
+      - ""
+    resourceNames:
+      - kubernetes-dashboard-key-holder
+      - kubernetes-dashboard-csrf
+    resources:
+      - secrets
+    verbs:
+      - get
+      - update
+      - delete
+  - apiGroups:
+      - ""
+    resourceNames:
+      - kubernetes-dashboard-settings
+    resources:
+      - configmaps
+    verbs:
+      - get
+      - update
+  - apiGroups:
+      - ""
+    resourceNames:
+      - kubernetes-dashboard-metrics-scraper
+      - http:kubernetes-dashboard-metrics-scraper
+    resources:
+      - services/proxy
+    verbs:
+      - get

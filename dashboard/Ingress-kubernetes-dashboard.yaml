@@ -1,0 +1,35 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/issuer: selfsigned
+  labels:
+    app.kubernetes.io/instance: kubernetes-dashboard
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: kubernetes-dashboard
+    helm.sh/chart: kubernetes-dashboard-7.0.0-alpha1
+  name: kubernetes-dashboard
+spec:
+  ingressClassName: traefik
+  rules:
+    - host: dashboard.dev.domain.com
+      http:
+        paths:
+          - backend:
+              service:
+                name: kubernetes-dashboard-web
+                port:
+                  name: web
+            path: /
+            pathType: ImplementationSpecific
+          - backend:
+              service:
+                name: kubernetes-dashboard-api
+                port:
+                  name: api
+            path: /api
+            pathType: ImplementationSpecific
+  tls:
+    - hosts:
+        - dashboard.dev.domain.com
+      secretName: kubernetes-dashboard-certs

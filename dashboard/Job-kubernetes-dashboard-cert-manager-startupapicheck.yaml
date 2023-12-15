@@ -1,0 +1,51 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  annotations:
+    helm.sh/hook: post-install
+    helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded
+    helm.sh/hook-weight: "1"
+  labels:
+    app: startupapicheck
+    app.kubernetes.io/component: startupapicheck
+    app.kubernetes.io/instance: kubernetes-dashboard
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: startupapicheck
+    app.kubernetes.io/version: v1.11.2
+    helm.sh/chart: cert-manager-v1.11.2
+  name: kubernetes-dashboard-cert-manager-startupapicheck
+  namespace: default
+spec:
+  backoffLimit: 4
+  template:
+    metadata:
+      labels:
+        app: startupapicheck
+        app.kubernetes.io/component: startupapicheck
+        app.kubernetes.io/instance: kubernetes-dashboard
+        app.kubernetes.io/managed-by: Helm
+        app.kubernetes.io/name: startupapicheck
+        app.kubernetes.io/version: v1.11.2
+        helm.sh/chart: cert-manager-v1.11.2
+    spec:
+      containers:
+        - args:
+            - check
+            - api
+            - --wait=1m
+          image: quay.io/jetstack/cert-manager-ctl:v1.11.2
+          imagePullPolicy: IfNotPresent
+          name: cert-manager-startupapicheck
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop:
+                - ALL
+      nodeSelector:
+        kubernetes.io/os: linux
+      restartPolicy: OnFailure
+      securityContext:
+        runAsNonRoot: true
+        seccompProfile:
+          type: RuntimeDefault
+      serviceAccountName: kubernetes-dashboard-cert-manager-startupapicheck
