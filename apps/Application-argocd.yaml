@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd
+  namespace: argocd
+spec:
+  destination:
+    namespace: argocd
+    server: https://kubernetes.default.svc
+  project: default
+  source:
+    path: argocd
+    repoURL: https://github.com/arnarg/nixidy-demo.git
+    targetRevision: env/prod
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
