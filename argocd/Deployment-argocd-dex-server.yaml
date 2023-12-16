@@ -7,10 +7,8 @@ metadata:
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: argocd-dex-server
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: v2.9.3
-    helm.sh/chart: argo-cd-5.51.6
   name: argocd-dex-server
-  namespace: argocd
+  namespace: default
 spec:
   replicas: 1
   revisionHistoryLimit: 3
@@ -21,7 +19,7 @@ spec:
   template:
     metadata:
       annotations:
-        checksum/cmd-params: 1abb880d49b1f026e06673e5b7e60b393e947685742db7f10f21eedb2e13492c
+        checksum/cmd-params: d7cf22fbdd035f2a9aa62f1ec2d2f7164116bf284ac3d56c0978f1c308e66c0d
       labels:
         app.kubernetes.io/component: dex-server
         app.kubernetes.io/instance: argocd
