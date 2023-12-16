@@ -15,4 +15,4 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: argocd-repo-server
-    namespace: default
+    namespace: argocd

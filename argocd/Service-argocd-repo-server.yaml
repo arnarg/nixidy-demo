@@ -8,7 +8,7 @@ metadata:
     app.kubernetes.io/name: argocd-repo-server
     app.kubernetes.io/part-of: argocd
   name: argocd-repo-server
-  namespace: default
+  namespace: argocd
 spec:
   ports:
     - name: https-repo-server
