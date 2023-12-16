@@ -3,11 +3,11 @@ kind: Service
 metadata:
   annotations: null
   labels:
-    app.kubernetes.io/instance: traefik-default
+    app.kubernetes.io/instance: traefik-traefik
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: traefik
   name: traefik
-  namespace: default
+  namespace: traefik
 spec:
   ports:
     - name: web
@@ -19,6 +19,6 @@ spec:
       protocol: TCP
       targetPort: websecure
   selector:
-    app.kubernetes.io/instance: traefik-default
+    app.kubernetes.io/instance: traefik-traefik
     app.kubernetes.io/name: traefik
   type: LoadBalancer
