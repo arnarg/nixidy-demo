@@ -7,10 +7,8 @@ metadata:
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: argocd-notifications-controller
     app.kubernetes.io/part-of: argocd
-    app.kubernetes.io/version: v2.9.3
-    helm.sh/chart: argo-cd-5.51.6
   name: argocd-notifications-controller
-  namespace: argocd
+  namespace: default
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -18,4 +16,4 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: argocd-notifications-controller
-    namespace: argocd
+    namespace: default
