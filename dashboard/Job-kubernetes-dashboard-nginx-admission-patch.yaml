@@ -11,7 +11,7 @@ metadata:
     app.kubernetes.io/name: nginx
     app.kubernetes.io/part-of: nginx
   name: kubernetes-dashboard-nginx-admission-patch
-  namespace: default
+  namespace: kubernetes-dashboard
 spec:
   template:
     metadata:

@@ -2,7 +2,7 @@ apiVersion: admissionregistration.k8s.io/v1
 kind: MutatingWebhookConfiguration
 metadata:
   annotations:
-    cert-manager.io/inject-ca-from-secret: default/kubernetes-dashboard-cert-manager-webhook-ca
+    cert-manager.io/inject-ca-from-secret: kubernetes-dashboard/kubernetes-dashboard-cert-manager-webhook-ca
   labels:
     app: webhook
     app.kubernetes.io/component: webhook
@@ -16,7 +16,7 @@ webhooks:
     clientConfig:
       service:
         name: kubernetes-dashboard-cert-manager-webhook
-        namespace: default
+        namespace: kubernetes-dashboard
         path: /mutate
     failurePolicy: Fail
     matchPolicy: Equivalent

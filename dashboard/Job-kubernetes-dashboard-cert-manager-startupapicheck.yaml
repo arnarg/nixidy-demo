@@ -12,7 +12,7 @@ metadata:
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: startupapicheck
   name: kubernetes-dashboard-cert-manager-startupapicheck
-  namespace: default
+  namespace: kubernetes-dashboard
 spec:
   backoffLimit: 4
   template:

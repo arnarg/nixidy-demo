@@ -9,7 +9,7 @@ metadata:
     app.kubernetes.io/name: nginx
     app.kubernetes.io/part-of: nginx
   name: kubernetes-dashboard-nginx-controller
-  namespace: default
+  namespace: kubernetes-dashboard
 spec:
   ipFamilies:
     - IPv4

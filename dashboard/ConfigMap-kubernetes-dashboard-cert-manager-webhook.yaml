@@ -9,4 +9,4 @@ metadata:
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: webhook
   name: kubernetes-dashboard-cert-manager-webhook
-  namespace: default
+  namespace: kubernetes-dashboard

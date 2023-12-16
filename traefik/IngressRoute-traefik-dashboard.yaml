@@ -3,11 +3,11 @@ kind: IngressRoute
 metadata:
   annotations: null
   labels:
-    app.kubernetes.io/instance: traefik-default
+    app.kubernetes.io/instance: traefik-traefik
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: traefik
   name: traefik-dashboard
-  namespace: default
+  namespace: traefik
 spec:
   entryPoints:
     - traefik

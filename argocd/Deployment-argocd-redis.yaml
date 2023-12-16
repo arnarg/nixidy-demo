@@ -8,7 +8,7 @@ metadata:
     app.kubernetes.io/name: argocd-redis
     app.kubernetes.io/part-of: argocd
   name: argocd-redis
-  namespace: default
+  namespace: argocd
 spec:
   replicas: 1
   revisionHistoryLimit: 3

@@ -8,7 +8,7 @@ metadata:
     app.kubernetes.io/name: nginx
     app.kubernetes.io/part-of: nginx
   name: kubernetes-dashboard-nginx
-  namespace: default
+  namespace: kubernetes-dashboard
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
@@ -16,4 +16,4 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: kubernetes-dashboard-nginx
-    namespace: default
+    namespace: kubernetes-dashboard

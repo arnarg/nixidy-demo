@@ -8,7 +8,7 @@ metadata:
     app.kubernetes.io/name: argocd-dex-server
     app.kubernetes.io/part-of: argocd
   name: argocd-dex-server
-  namespace: default
+  namespace: argocd
 rules:
   - apiGroups:
       - ""

@@ -8,7 +8,7 @@ metadata:
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: cainjector
   name: kubernetes-dashboard-cert-manager-cainjector
-  namespace: default
+  namespace: kubernetes-dashboard
 spec:
   replicas: 1
   selector:
