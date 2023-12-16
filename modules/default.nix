@@ -27,6 +27,17 @@
       This branch contains auto-generated manifests for a specific environment. Do not edit manually.
     '';
 
+    # Many helm chars will render all resources with the
+    # following labels.
+    # This produces huge diffs when the charts are updated
+    # because the values of these labels change each release.
+    # Here we add a transformer that strips them out after
+    # templating the helm charts in each application.
+    nixidy.defaults.helm.transformer = map (lib.kube.removeLabels [
+      "app.kubernetes.io/version"
+      "helm.sh/chart"
+    ]);
+
     # Set default enabled services.
     services.argocd.enable = lib.mkDefault true;
     networking.traefik.enable = lib.mkDefault true;

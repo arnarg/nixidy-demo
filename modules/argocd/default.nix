@@ -63,16 +63,6 @@ in {
         # Here we merge default values with provided
         # values from `config.services.argocd.values`.
         values = lib.recursiveUpdate defaultValues cfg.values;
-
-        # All resources are rendered with the following labels.
-        # This produces huge diffs when the chart is updated
-        # because the values of these labels changes each release.
-        # Here we add a transformer that strips them out after
-        # templating the helm chart.
-        transformer = map (lib.kube.removeLabels [
-          "app.kubernetes.io/version"
-          "helm.sh/chart"
-        ]);
       };
     };
   };
