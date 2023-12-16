@@ -5,7 +5,6 @@ metadata:
     app.kubernetes.io/instance: kubernetes-dashboard
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/part-of: kubernetes-dashboard
-    helm.sh/chart: kubernetes-dashboard-7.0.0-alpha1
   name: kubernetes-dashboard
 rules:
   - apiGroups:

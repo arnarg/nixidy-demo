@@ -5,8 +5,6 @@ metadata:
     app.kubernetes.io/instance: kubernetes-dashboard
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: metrics-server
-    app.kubernetes.io/version: 0.6.2
-    helm.sh/chart: metrics-server-3.8.4
   name: system:kubernetes-dashboard-metrics-server
 roleRef:
   apiGroup: rbac.authorization.k8s.io
@@ -15,4 +13,4 @@ roleRef:
 subjects:
   - kind: ServiceAccount
     name: kubernetes-dashboard-metrics-server
-    namespace: kubernetes-dashboard
+    namespace: default

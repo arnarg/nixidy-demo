@@ -7,8 +7,6 @@ metadata:
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: kubernetes-dashboard-api
     app.kubernetes.io/part-of: kubernetes-dashboard
-    app.kubernetes.io/version: v1.0.0
-    helm.sh/chart: kubernetes-dashboard-7.0.0-alpha1
   name: kubernetes-dashboard-api
 spec:
   replicas: 1
@@ -32,7 +30,7 @@ spec:
       containers:
         - args:
             - --enable-insecure-login
-            - --namespace=kubernetes-dashboard
+            - --namespace=default
           image: docker.io/kubernetesui/dashboard-api:v1.0.0
           imagePullPolicy: IfNotPresent
           name: kubernetes-dashboard-api

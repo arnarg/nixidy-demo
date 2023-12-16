@@ -8,8 +8,6 @@ metadata:
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: nginx
     app.kubernetes.io/part-of: nginx
-    app.kubernetes.io/version: 1.8.1
-    helm.sh/chart: nginx-4.7.1
   name: kubernetes-dashboard-nginx-admission
 webhooks:
   - admissionReviewVersions:
@@ -17,7 +15,7 @@ webhooks:
     clientConfig:
       service:
         name: kubernetes-dashboard-nginx-controller-admission
-        namespace: kubernetes-dashboard
+        namespace: default
         path: /networking/v1/ingresses
     failurePolicy: Fail
     matchPolicy: Equivalent

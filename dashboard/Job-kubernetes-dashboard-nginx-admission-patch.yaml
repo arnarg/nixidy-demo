@@ -10,10 +10,8 @@ metadata:
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: nginx
     app.kubernetes.io/part-of: nginx
-    app.kubernetes.io/version: 1.8.1
-    helm.sh/chart: nginx-4.7.1
   name: kubernetes-dashboard-nginx-admission-patch
-  namespace: kubernetes-dashboard
+  namespace: default
 spec:
   template:
     metadata:

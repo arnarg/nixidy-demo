@@ -7,8 +7,6 @@ metadata:
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: kubernetes-dashboard-metrics-scraper
     app.kubernetes.io/part-of: kubernetes-dashboard
-    app.kubernetes.io/version: v1.0.9
-    helm.sh/chart: kubernetes-dashboard-7.0.0-alpha1
   name: kubernetes-dashboard-metrics-scraper
 spec:
   replicas: 1

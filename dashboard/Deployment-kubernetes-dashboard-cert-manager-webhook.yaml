@@ -7,10 +7,8 @@ metadata:
     app.kubernetes.io/instance: kubernetes-dashboard
     app.kubernetes.io/managed-by: Helm
     app.kubernetes.io/name: webhook
-    app.kubernetes.io/version: v1.11.2
-    helm.sh/chart: cert-manager-v1.11.2
   name: kubernetes-dashboard-cert-manager-webhook
-  namespace: kubernetes-dashboard
+  namespace: default
 spec:
   replicas: 1
   selector:
