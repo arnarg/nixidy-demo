@@ -24,7 +24,7 @@ jobs:
     - uses: DeterminateSystems/magic-nix-cache-action@v2
 
     - run: |
-        TARGET_BRANCH=$(nix eval ./main#nixidyEnvs.x86_64-linux.${{ matrix.env }}.targetBranch --raw)
+        TARGET_BRANCH=$(nix run ./main#nixidy -- info ./main#${{ matrix.env }} --json | jq -r .branch)
 
         if git -C main fetch origin "$TARGET_BRANCH"; then
           git -C main worktree add --checkout ../${{ matrix.env }} "$TARGET_BRANCH"
