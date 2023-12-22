@@ -10,8 +10,8 @@
   chart = lib.helm.downloadHelmChart {
     repo = "https://traefik.github.io/charts/";
     chart = "traefik";
-    version = "25.0.0";
-    chartHash = "sha256-ua8KnUB6MxY7APqrrzaKKSOLwSjDYkk9tfVkb1bqkVM=";
+    version = "26.0.0";
+    chartHash = "sha256-GaBxl6RRwGSC84d3i35kuLHscgAsRVkJZtmqX0SWmZE=";
   };
 
   # It can be useful set some default values from options
