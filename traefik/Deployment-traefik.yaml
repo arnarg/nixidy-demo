@@ -30,7 +30,7 @@ spec:
         app.kubernetes.io/instance: traefik-traefik
         app.kubernetes.io/managed-by: Helm
         app.kubernetes.io/name: traefik
-        helm.sh/chart: traefik-25.0.0
+        helm.sh/chart: traefik-26.0.0
     spec:
       containers:
         - args:
@@ -56,7 +56,7 @@ spec:
               valueFrom:
                 fieldRef:
                   fieldPath: metadata.namespace
-          image: docker.io/traefik:v2.10.5
+          image: docker.io/traefik:v2.10.6
           imagePullPolicy: IfNotPresent
           lifecycle: null
           livenessProbe:
